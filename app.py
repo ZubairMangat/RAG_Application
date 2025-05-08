@@ -6,7 +6,10 @@ from PyPDF2 import PdfReader
 
 # Initialize SentenceTransformer and Groq client
 retriever = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
-client = Groq(api_key="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")
+#client = Groq(api_key="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")                  this is used when you run on your system.If you want to deploy on streamlit then use following code
+api_key=st.secrets['key']
+client = Groq(api_key=api_key)
+
 
 # Global variables
 documents = []
