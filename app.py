@@ -1,11 +1,13 @@
 import os
+import torch
 import streamlit as st
 from sentence_transformers import SentenceTransformer, util
 from groq import Groq
 from PyPDF2 import PdfReader
 
 # Initialize SentenceTransformer and Groq client
-retriever = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
+retriever = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2', device='cpu')
+
 
 # For deployment on Streamlit
 api_key = st.secrets['key']
