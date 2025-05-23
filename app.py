@@ -1,5 +1,5 @@
 import os
-import torch
+
 import streamlit as st
 from sentence_transformers import SentenceTransformer, util
 from groq import Groq
